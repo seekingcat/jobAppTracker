@@ -65,6 +65,13 @@ app.get('/meets/:id', async (req, res) => {
     res.redirect(`/meets/${meet._id}`)
   })
 
+  app.delete('/meets/:id', async (req, res) => {
+    const {id} = req.params;
+    const deleted = await Meet.findByIdAndDelete(id)
+    res.redirect('/meets')
+  })
+  
+
 app.listen(PORT || process.env.port, () => {
     console.log(`NOW LISTENING ON PORT ${PORT}`)
 })
