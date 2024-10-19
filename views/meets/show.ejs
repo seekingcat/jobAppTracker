@@ -17,11 +17,11 @@
                 </form>
             </div>
             <div class="is-flex is-justify-content-space-between">
-                <span class="is-inline-block">Job Salary: £<%= meet.salary %></span>
-                <span class="is-inline-block has-text-right">Status: <%= meet.status  %></span>
+                <span class="is-size-4"><span class="has-text-weight-bold">Job Salary:</span> £<%= meet.salary %></span>
+                <span class="is-size-4"><span class="has-text-weight-bold">Status:</span> <%= meet.status  %></span>
             </div>
-                <p>Job listing: <a href="<%= meet.joblisting %>" target="_blank">Click here for listing</a></p>
-                <p>Notes: <%= meet.notes  %></p>
+                <p><span class="has-text-weight-bold">Job listing:</span> <a href="<%= meet.joblisting %>" target="_blank">Click here for listing</a></p>
+                <p><span class="has-text-weight-bold">Notes:</span> <%= meet.notes  %></p>
 
                 <a href="./<%=meet._id%>/edit" class="button mt-2 is-rounded is-small is-link">Update Details</a>
             </div>
