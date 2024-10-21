@@ -6,3 +6,21 @@
     <title>Show Job Details</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
 </head>
+
+<body>
+    <h1 class="has-text-primary has-text-centered is-size-2"><%=meet.jobtitle  %></h1>
+    <div class="column is-8 is-offset-2">
+    <div class="box">
+        <span class="is-inline-block">Job Salary: £<%= meet.salary %></span>
+        <span class="is-inline-block has-text-right">Status: <%= meet.status  %></span>
+        <p>Job listing: <a href="<%= meet.joblisting %>" target="_blank">Click here for listing</a></p>
+        <p>Notes: <%= meet.notes  %></p>
+        <a href="./<%=meet._id%>/edit">Update Details</a>
+        <form action="/meets/<%=meet._id%>?_method=DELETE" method="POST">
+            <button class="delete"></button>
+        </form>
+    </div>
+    <a href="/meets">Back to Full List</a>
+    </div>
+</body>
+</html>
