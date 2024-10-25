@@ -12,6 +12,53 @@
 
     <div class="column is-8 is-offset-2">
 
+        <form action="/meets" method="post">
+            <div class="field">
+                <label for="jobtitle" class="label">Job Title:</label>
+                <div class="control">
+                    <input type="text" name="jobtitle" id="jobtitle" placeholder="Job Title" class="input">
+                </div>
+            </div>
+            <div class="field">
+                <label for="salary" class="label">Salary</label>
+                <div class="control">
+                    <input type="number" name="salary" id="salary" placeholder="Salary" class="input">
+                </div>
+            </div>
+            <div class="field">
+                <label for="joblisting" class="label">Job Listing Link: </label>
+                <div class="control">
+                    <input type="url" name="joblisting" id="joblisting" class="input">
+                </div>
+            </div>
+            <div class="field">
+                <label for="status" class="label">Status:</label>
+                <div class="control">
+                    <div class="select">
+                        <select name="status" id="status">
+                            <option value="Applied">Applied</option>
+                            <option value="Interviewed">Interviewed</option>
+                            <option value="Rejected">Rejected</option>
+                            <option value="Offered">Offered</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="field">
+                <label for="notes" class="label">Notes: </label>
+                <div class="control">
+                    <textarea name="notes" id="notes" class="textarea" placeholder="Place any notes about the job here"></textarea>
+                </div>
+            </div>
+            <div class="field is-grouped">
+                <div class="control">
+                  <button class="button is-link">Submit</button>
+                </div>
+                <div class="control">
+                    <a href="/meets" class="button">Cancel</a>
+                </div>
+              </div>
+        </form>
     
     </div>
 </main>
