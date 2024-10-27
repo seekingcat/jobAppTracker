@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application Tracker</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css"
+>
+</head>
+<body>
+    <h1 class="has-text-primary has-text-centered is-size-2">Job Application Tracker</h1>
+    <div class="column is-8 is-offset-2">
+        <% for (let meet of meets) { %>
+        <div class="box" id="jobSlug">
+            <span class="jobTitle"><strong>Job title: <%=  meet.jobtitle %></strong></span>
+            <span class="jobSalary">Job Salary: £<%= meet.salary %></span>
+            <span class="jobStatus">Status: <%= meet.status  %></span>
+            <a href="/meets/<%= meet._id %>" class="button is-link is-rounded" id="detail-link">View Details</a>
+        </div>
+        <% } %>
+
+        <a href="/meets/new" id="new" class="button is-primary">Add new Job Posting</a> 
+    </div>
+    
+</body>
+</html>
