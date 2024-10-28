@@ -1,0 +1,10 @@
+#detail-link {
+    float: right;
+    /* top: -5px; */
+}
+
+#jobSlug {
+    display: flex;
+    justify-content: space-between;
+    vertical-align: middle;
+}
