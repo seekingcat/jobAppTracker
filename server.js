@@ -52,7 +52,18 @@ app.get('/meets/:id', async (req, res) => {
     const meet = await Meet.findById(id)
     res.render('meets/show', {meet})
   })
+
+  app.get('/meets/:id/edit', async(req, res) => {
+    const {id} =  req.params
+    const meet = await Meet.findById(id)
+    res.render('meets/edit', {meet})
+  })
   
+  app.put('/meets/:id', async(req, res) => {
+    const {id} = req.params;
+    const meet = await Meet.findByIdAndUpdate(id, req.body, {runValidators: true})
+    res.redirect(`/meets/${meet._id}`)
+  })
 
 app.listen(PORT || process.env.port, () => {
     console.log(`NOW LISTENING ON PORT ${PORT}`)
