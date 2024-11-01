@@ -44,6 +44,14 @@ app.get('/meets/new', (req, res) => {
     await newMeet.save();
     res.redirect('/meets/')
   })
+
+// the show one route, have to grab the id of the url from req.params
+// then findbyId() and pass that to the ejs
+app.get('/meets/:id', async (req, res) => {
+    const {id} = req.params
+    const meet = await Meet.findById(id)
+    res.render('meets/show', {meet})
+  })
   
 
 app.listen(PORT || process.env.port, () => {
