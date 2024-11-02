@@ -24,6 +24,28 @@ app.use(express.urlencoded({extended: true}))
 app.use(cors())
 app.use(methodOverride('_method'))
 
+// the list view, got to call the list with .find() and then pass it to ejs
+app.get('/meets', async (req, res) => {
+    const meets = await Meet.find({})
+      res.render('meets/meets', {meets})
+  })
+
+// needed to put this route before the show route, even though I made the show route first
+// render the form first, no need to be async
+app.get('/meets/new', (req, res) => {
+    res.render('meets/new')
+  })
+  
+  
+  // this is the post route, get stuff from the body and create a new document
+  // then have to call save
+  app.post('/meets', async (req, res) => {
+    const newMeet = new Meet(req.body);
+    await newMeet.save();
+    res.redirect('/meets/')
+  })
+  
+
 app.listen(PORT || process.env.port, () => {
     console.log(`NOW LISTENING ON PORT ${PORT}`)
 })
