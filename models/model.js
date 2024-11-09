@@ -19,6 +19,10 @@ const meetSchema = new mongoose.Schema({
     },
     notes: {
         type: String
+    },
+    date: {
+        type: Date,
+        default: Date.now()
     }
 })
 
