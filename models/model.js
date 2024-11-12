@@ -18,9 +18,10 @@ const meetSchema = new mongoose.Schema({
         enum: ['Applied', 'Interviewed', 'Rejected', 'Offered']
     },
     notes: {
-        type: String
+        body: String,
+        datecreated: Date
     },
-    date: {
+    dateadded: {
         type: Date,
         default: Date.now()
     }
